@@ -9,10 +9,10 @@
     </parent>
     <packaging>pom</packaging>
     <groupId>com.winhong</groupId>
-    <artifactId>operation-manager-graalvm</artifactId>
+    <artifactId>operation-manager-native</artifactId>
     <version>11.0-SNAPSHOT</version>
     <name>operation-manager-graalvm</name>
-    <description>operation-manager-graalvm</description>
+    <description>operation-manager-native</description>
     <properties>
         <java.version>17</java.version>
         <spring-cloud.version>2023.0.3</spring-cloud.version>

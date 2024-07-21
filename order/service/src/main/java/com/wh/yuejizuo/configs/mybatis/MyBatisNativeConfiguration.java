@@ -1,6 +1,5 @@
 package com.wh.yuejizuo.configs.mybatis;
 
-import ch.qos.logback.core.FileAppender;
 import com.baomidou.mybatisplus.annotation.IEnum;
 import com.baomidou.mybatisplus.core.MybatisParameterHandler;
 import com.baomidou.mybatisplus.core.MybatisXMLLanguageDriver;
@@ -17,7 +16,6 @@ import com.baomidou.mybatisplus.extension.handlers.FastjsonTypeHandler;
 import com.baomidou.mybatisplus.extension.handlers.GsonTypeHandler;
 import com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler;
 import com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;
-import com.zaxxer.hikari.HikariConfig;
 import org.apache.commons.logging.LogFactory;
 import org.apache.ibatis.annotations.DeleteProvider;
 import org.apache.ibatis.annotations.InsertProvider;

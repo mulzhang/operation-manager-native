@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.winhong</groupId>
-        <artifactId>operation-manager-graalvm</artifactId>
+        <artifactId>operation-manager-native</artifactId>
         <version>11.0-SNAPSHOT</version>
         <relativePath>../../pom.xml</relativePath>
     </parent>
@@ -38,10 +38,10 @@
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-bootstrap</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-starter-bootstrap</artifactId>-->
+<!--        </dependency>-->
 
 
 
@@ -77,15 +77,15 @@
                         <phase>compile</phase>
                     </execution>
                 </executions>
-                <configuration>
-                    <!-- 替换为子模块的主类 -->
-                    <mainClass>com.wh.yuejizuo.OrderActivator</mainClass>
-                    <classesDirectory>${project.build.outputDirectory}</classesDirectory>
-                    <buildArgs combine.children="append">
-                        <buildArg>--enable-url-protocols=http</buildArg>
-<!--                        <buildArg>&#45;&#45;features=com.wh.yuejizuo.configs.mybatis.LambdaRegistrationFeature</buildArg>-->
-                    </buildArgs>
-                </configuration>
+<!--                <configuration>-->
+<!--                    &lt;!&ndash; 替换为子模块的主类 &ndash;&gt;-->
+<!--                    <mainClass>com.wh.yuejizuo.OrderActivator</mainClass>-->
+<!--                    <classesDirectory>${project.build.outputDirectory}</classesDirectory>-->
+<!--                    <buildArgs combine.children="append">-->
+<!--                        <buildArg>&#45;&#45;enable-url-protocols=http,https</buildArg>-->
+<!--&lt;!&ndash;                        <buildArg>&#45;&#45;features=com.wh.yuejizuo.configs.mybatis.LambdaRegistrationFeature</buildArg>&ndash;&gt;-->
+<!--                    </buildArgs>-->
+<!--                </configuration>-->
             </plugin>
         </plugins>
     </build>
