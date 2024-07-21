@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: app-provider-service #服务名
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        server-addr: ${NACOS_SERVER_ADDR:localhost}:${NACOS_SERVER_PORT:8848}
+        file-extension: ${CONFIG_FILE_EXTENSION:yml}
+        shared-configs[0].data-id: ${SHARED_DATA_ID:application-service.yml}
+        shared-configs[0].group: ${SHARED_GROUP:DEFAULT_GROUP}
+        shared-configs[0].refresh: true
+        extension-configs[0].data-id: ${EXTENSION_DATA_ID:order-service.yml}
+        extension-configs[0].group: ${EXTENSION_GROUP:DEFAULT_GROUP}
+        extension-configs[0].refresh: true
+        namespace: ${NACOS_NAMESPACE:public}
