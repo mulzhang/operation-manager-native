@@ -2,7 +2,7 @@ spring:
   application:
     name: app-provider-service #服务名
   config:
-    import: optional:nacos:${spring.application.name}.yaml
+    import: optional:nacos:${spring.application.name}.yml
   cloud:
     nacos:
       discovery:
@@ -16,6 +16,6 @@ spring:
         extension-configs[0].data-id: ${EXTENSION_DATA_ID:app-provider-service.yml}
         extension-configs[0].group: ${EXTENSION_GROUP:DEFAULT_GROUP}
         extension-configs[0].refresh: true
-        namespace: ${NACOS_NAMESPACE:PUBLIC}
+        namespace: ${NACOS_NAMESPACE:public}
 server:
   port: 8081
