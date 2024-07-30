@@ -1,0 +1,25 @@
+#!/bin/sh
+cd $1
+pwd
+echo "Building jar..."
+mvn clean && mvn package
+echo "Building jar success..."
+echo "Building native image files..."
+java -agentlib:native-image-agent=config-output-dir=./src/main/resources/META-INF/native-image -jar ./target/*.jar &
+echo "Building native image files success..."
+
+# 获取后台运行的进程 ID
+PID=$!
+echo "Java application PID: $PID"
+
+# 等待几秒钟确保应用程序启动
+sleep 5
+
+# 停止 Java 应用程序
+kill $PID
+echo "Java application with PID $PID has been terminated"
+
+echo "Building image ..."
+mvn --no-transfer-progress native:compile -Pnative
+echo "Building image success..."
+

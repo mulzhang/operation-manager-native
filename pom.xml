@@ -11,7 +11,7 @@
     <groupId>com.winhong</groupId>
     <artifactId>operation-manager-native</artifactId>
     <version>11.0-SNAPSHOT</version>
-    <name>operation-manager-graalvm</name>
+    <name>operation-manager-native</name>
     <description>operation-manager-native</description>
     <properties>
         <java.version>17</java.version>

@@ -11,13 +11,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author Administrator
  */
 @SpringBootApplication
-//@EnableAspectJAutoProxy(exposeProxy = true)
-//@EnableFeignClients
-//@ComponentScan(value = { "com.wh.wincore.**",
-//        "com.wh.yuejizuo.**" ,
-//        "com.winhong.wincore.rest.register",
-//        "com.wh.cloudos.**"})
-//@RegisterReflectionForBinding(value = {LogFactory.class, HikariConfig.class})
 public class OrderActivator {
 
     private static Logger log = LoggerFactory.getLogger(OrderActivator.class);

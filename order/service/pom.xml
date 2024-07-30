@@ -28,27 +28,31 @@
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
-        </dependency>
-
+<!--        <dependency>-->
+<!--            <groupId>com.baomidou</groupId>-->
+<!--            <artifactId>mybatis-plus-spring-boot3-starter</artifactId>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>logback-adapter</artifactId>
+                    <groupId>com.alibaba.nacos</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
-
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-starter-bootstrap</artifactId>-->
-<!--        </dependency>-->
-
-
-
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>logback-adapter</artifactId>
+                    <groupId>com.alibaba.nacos</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
+
 
         <dependency>
             <groupId>com.mysql</groupId>
@@ -69,23 +73,17 @@
                 <groupId>org.graalvm.buildtools</groupId>
                 <artifactId>native-maven-plugin</artifactId>
                 <version>0.10.2</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>compile</goal>
-                        </goals>
-                        <phase>compile</phase>
-                    </execution>
-                </executions>
-<!--                <configuration>-->
-<!--                    &lt;!&ndash; 替换为子模块的主类 &ndash;&gt;-->
-<!--                    <mainClass>com.wh.yuejizuo.OrderActivator</mainClass>-->
-<!--                    <classesDirectory>${project.build.outputDirectory}</classesDirectory>-->
-<!--                    <buildArgs combine.children="append">-->
-<!--                        <buildArg>&#45;&#45;enable-url-protocols=http,https</buildArg>-->
-<!--&lt;!&ndash;                        <buildArg>&#45;&#45;features=com.wh.yuejizuo.configs.mybatis.LambdaRegistrationFeature</buildArg>&ndash;&gt;-->
-<!--                    </buildArgs>-->
-<!--                </configuration>-->
+                <configuration>
+                    <!-- 替换为子模块的主类 -->
+                    <mainClass>com.wh.yuejizuo.OrderActivator</mainClass>
+                    <classesDirectory>${project.build.outputDirectory}</classesDirectory>
+                    <buildArgs combine.children="append">
+                        <buildArg>--enable-url-protocols=http,https</buildArg>
+<!--                        <buildArg>&#45;&#45;initialize-at-run-time=io.netty</buildArg>-->
+<!--                        <buildArg>&#45;&#45;initialize-at-build-time=io.netty.util</buildArg>-->
+                        <buildArg>--enable-monitoring=jfr,jmxserver,jvmstat</buildArg>
+                    </buildArgs>
+                </configuration>
             </plugin>
         </plugins>
     </build>
